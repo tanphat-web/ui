@@ -1,0 +1,206 @@
+main {
+  .hero {
+    overflow: hidden;
+    &:hover {
+      i.control {
+        opacity: 1;
+      }
+    }
+    &__carousel {
+      width: 100%;
+      height: 328px;
+      @include mobile {
+        height: auto;
+      }
+      &-item {
+        width: 100%;
+        height: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    position: relative;
+  }
+  .products {
+    padding: 15px 0;
+    &:last-child {
+      margin-bottom: 40px;
+    }
+    &.pdbg {
+      .container-fluid {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include mobile {
+          display: block;
+        }
+        .product__banner {
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          @include mobile {
+            width: 100%;
+            height: 150px;
+            background-position: center;
+            background-attachment: fixed;
+            margin-bottom: 15px;
+          }
+        }
+      }
+      .product__banner {
+        width: 235px;
+        position: relative;
+        height: 340px;
+        &:hover {
+          a.text {
+            color: $blue;
+          }
+        }
+        a {
+          &.text {
+            position: absolute;
+            color: $white-cl;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 23px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 27px;
+
+            @include mobile {
+              font-size: 21px;
+            }
+          }
+        }
+      }
+      .products__main {
+        // display: flex;
+        width: calc(100% - 235px);
+        @include mobile {
+          width: 100%;
+        }
+        .products__main-carousel {
+          width: 100%;
+        }
+      }
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+
+      a {
+        text-decoration: underline;
+        color: $blue;
+        font-weight: 500;
+        font-size: 15px;
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+    &__main {
+      position: relative;
+      i.control {
+        opacity: 1;
+        color: $black-cl;
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      .product__main-item {
+        background: $white-bg-cl;
+        padding: 10px 25px;
+        border-radius: 6px;
+        margin-right: 13px;
+        width: 235px;
+        height: 340px;
+        .img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        .text {
+          padding: 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: calc(100% - 150px);
+          h3 {
+            color: $black-cl;
+            font-size: 13px;
+            font-weight: 500;
+            @include overtext(3);
+          }
+          p {
+            &.discount {
+              color: $gray;
+              font-size: 12px;
+              margin-bottom: 10px;
+            }
+            &.price {
+              color: $black-cl;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .endow {
+    margin: 10px 0;
+    .text {
+      background: #f5f7ff;
+      text-align: center;
+      height: 67px;
+      line-height: 67px;
+      color: #272560;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+  .review {
+    padding: 30px 0;
+    @include mobile {
+      padding: 30px 0;
+    }
+    &__carousel {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 30px 50px;
+      background: $white-cl;
+      @include tablet {
+        max-width: 100%;
+        padding: 25px 35px;
+      }
+      &-item {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: $white-cl;
+      }
+      p {
+        @include overtext(3);
+        &.author {
+          font-style: italic;
+          font-weight: 500;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

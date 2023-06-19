@@ -1,0 +1,50 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: $max-width;
+  -webkit-font-smoothing: antialiased;
+  margin: auto;
+  font-family: "SVN-Gilroy";
+  background: $white-cl;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black-cl;
+  background-color: #f5f7ff;
+  @include custom-scrollbar();
+  @include mobile {
+    font-size: 14px;
+  }
+  .mainwrapper {
+    width: 100%;
+    margin: auto;
+  }
+
+  .container {
+    max-width: $container-width;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    @include tablet {
+      padding: 0 15px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $text-cl;
+}

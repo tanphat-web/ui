@@ -1,0 +1,80 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: $white-bg-cl;
+  z-index: 4;
+  padding-top: 92px;
+  transition: 0.3s;
+  overflow: auto;
+  transform: translateX(-100%);
+  @include custom-scrollbar;
+  &.active {
+    padding-top: 62px;
+  }
+  &__main {
+    width: 100%;
+    ul {
+      li {
+        .submenu {
+          max-height: 0;
+          overflow: hidden;
+          transition: 0.4s ease;
+          &.active {
+            max-height: 100vh;
+          }
+          ul {
+            margin-left: 15px;
+          }
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 15px 30px;
+          transition: 0.3s;
+          font-weight: 500;
+          &:hover:not(.active) {
+            color: $blue;
+          }
+          &.active {
+            .button {
+              span {
+                &:last-child {
+                  opacity: 1;
+                }
+                &:first-child {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+          .button {
+            position: relative;
+
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 20px;
+              transition: 0.3s;
+              &:last-child {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.menu-show {
+  overflow: hidden;
+  nav.navbar {
+    transform: translateX(0%);
+  }
+}
