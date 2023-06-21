@@ -77,53 +77,80 @@ document.addEventListener("keydown", (e) => {
 
 buttonCart.addEventListener("click", toggleCart);
 
-const flickityCarousel = {
-  init: function () {
-    this.products();
-    this.productDetail();
-  },
-  products: function () {
-    const productsCarousel = document.querySelectorAll(".products");
-    productsCarousel.forEach((element) => {
-      const attributeId = element.getAttribute("id");
-      const elemId = document.querySelector(
-        `#${attributeId} .products__main .products__main-carousel`
-      );
-      carousel(elemId);
-    });
-    function carousel(e) {
-      const flktyProducts = new Flickity(e, {
-        cellAlign: "left",
-        contain: true,
-        pageDots: false,
-        freeScroll: false,
-        prevNextButtons: true,
-        cellAlign: "left",
-      });
-    }
-  },
-  productDetail: function () {
-    const productDetailCarousel = document.querySelector(
-      ".detail__main-img .carousel"
-    );
-    const nav = document.querySelector(".detail__main-img .carousel__nav");
-    const flkty = new Flickity(productDetailCarousel, {
-      cellAlign: "left",
-      contain: false,
-      pageDots: false,
-      prevNextButtons: true,
-      wrapAround: true,
-      fullscreen: true,
-      autoPlay: false,
-    });
-    const flktyNav = new Flickity(nav, {
-      asNavFor: productDetailCarousel,
-      contain: true,
-      pageDots: false,
-      prevNextButtons: false,
-    });
-  },
-};
+// const flickityCarousel = {
+//   init: function () {
+//     this.products();
+//     this.productDetail();
+//     this.news();
+//     this.hero();
+//   },
+//   hero: function () {
+//     const heroCarousel = document.querySelector(".hero__carousel");
+//     const flktyHero = new Flickity(heroCarousel, {
+//       // options
+//       cellAlign: "left",
+//       contain: false,
+//       pageDots: false,
+//       prevNextButtons: true,
+//       friction: 0.6,
+//       wrapAround: true,
+//       fullscreen: true,
+//       autoPlay: 5000,
+//     });
+//   },
+//   products: function () {
+//     const productsCarousel = document.querySelectorAll(".products");
+//     productsCarousel.forEach((element) => {
+//       const attributeId = element.getAttribute("id");
+//       const elemId = document.querySelector(
+//         `#${attributeId} .products__main .products__main-carousel`
+//       );
+//       carousel(elemId);
+//     });
+//     function carousel(e) {
+//       const flktyProducts = new Flickity(e, {
+//         cellAlign: "left",
+//         contain: true,
+//         pageDots: false,
+//         freeScroll: false,
+//         prevNextButtons: true,
+//         cellAlign: "left",
+//       });
+//     }
+//   },
+//   news: function () {
+//     const newsCarousel = document.querySelector(".news__carousel");
+//     const flktyNews = new Flickity(newsCarousel, {
+//       cellAlign: "left",
+//       contain: true,
+//       pageDots: false,
+//       freeScroll: false,
+//       prevNextButtons: true,
+//       cellAlign: "left",
+//     });
+//   },
+//   productDetail: function () {
+//     const productDetailCarousel = document.querySelector(
+//       ".detail__main-img .carousel"
+//     );
+//     const nav = document.querySelector(".detail__main-img .carousel__nav");
+//     const flkty = new Flickity(productDetailCarousel, {
+//       cellAlign: "left",
+//       contain: false,
+//       pageDots: false,
+//       prevNextButtons: true,
+//       wrapAround: true,
+//       fullscreen: true,
+//       autoPlay: false,
+//     });
+//     const flktyNav = new Flickity(nav, {
+//       asNavFor: productDetailCarousel,
+//       contain: true,
+//       pageDots: false,
+//       prevNextButtons: false,
+//     });
+//   },
+// };
 
-// Initialize the Flickity carousel
-flickityCarousel.init();
+// // Initialize the Flickity carousel
+// flickityCarousel.init();

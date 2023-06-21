@@ -26,9 +26,6 @@ main {
   }
   .products {
     padding: 15px 0;
-    &:last-child {
-      margin-bottom: 40px;
-    }
     &.pdbg {
       .container-fluid {
         display: flex;
@@ -36,45 +33,6 @@ main {
         gap: 20px;
         @include mobile {
           display: block;
-        }
-        .product__banner {
-          background-size: cover;
-          background-repeat: no-repeat;
-
-          @include mobile {
-            width: 100%;
-            height: 150px;
-            background-position: center;
-            background-attachment: fixed;
-            margin-bottom: 15px;
-          }
-        }
-      }
-      .product__banner {
-        width: 235px;
-        position: relative;
-        height: 340px;
-        &:hover {
-          a.text {
-            color: $blue;
-          }
-        }
-        a {
-          &.text {
-            position: absolute;
-            color: $white-cl;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 23px;
-            font-weight: 600;
-            text-align: center;
-            line-height: 27px;
-
-            @include mobile {
-              font-size: 21px;
-            }
-          }
         }
       }
       .products__main {
@@ -160,7 +118,7 @@ main {
   .endow {
     margin: 10px 0;
     .text {
-      background: #f5f7ff;
+      background: $white-bg-cl;
       text-align: center;
       height: 67px;
       line-height: 67px;
@@ -169,36 +127,71 @@ main {
       font-size: 16px;
     }
   }
-
-  .review {
-    padding: 30px 0;
-    @include mobile {
-      padding: 30px 0;
+  .hero {
+    &:hover {
+      .flickity-button {
+        opacity: 1;
+      }
     }
-    &__carousel {
-      max-width: 940px;
-      margin: 0 auto;
-      padding: 30px 50px;
-      background: $white-cl;
-      @include tablet {
-        max-width: 100%;
-        padding: 25px 35px;
+    .flickity-button {
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+  .news {
+    padding: 15px 0;
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        text-decoration: underline;
+        color: #0156ff;
+        font-weight: 500;
+        font-size: 15px;
       }
-      &-item {
-        width: 100%;
-        height: 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: $white-cl;
-      }
-      p {
-        @include overtext(3);
-        &.author {
-          font-style: italic;
+    }
+    .news__carousel {
+      .new__item {
+        background: #fff;
+        border-radius: 6px;
+        margin-right: 13px;
+        width: 235px;
+        &:hover {
+          a {
+            p {
+              color: $blue;
+            }
+            img {
+              transform: scale(1.15);
+              filter: brightness(50%);
+            }
+          }
+        }
+        a {
           font-weight: 500;
-          display: flex;
-          justify-content: flex-end;
+        }
+        span {
+          color: $gray;
+          font-size: 13px;
+        }
+        .img {
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+          }
+        }
+
+        .text {
+          padding: 10px;
+          p {
+            transition: 0.3s;
+            @include overtext(3);
+            min-height: 50px;
+          }
         }
       }
     }
